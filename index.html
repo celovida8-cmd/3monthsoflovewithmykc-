@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Bebuuu 🌻</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --yellow: #FFD95A;
+    --yellow-deep: #F5B800;
+    --yellow-pale: #FFF8DC;
+    --brown: #5C3D11;
+    --cream: #FFFDF0;
+    --text: #3B2206;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(135deg,#fff4b3,#ffe066);
+    overflow-x: hidden;
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  .sunflower {
+    position: fixed;
+    font-size: 45px;
+    opacity: 0.25;
+    animation: float 10s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes float {
+    from {
+      transform: translateY(110vh) rotate(0deg);
+    }
+    to {
+      transform: translateY(-120vh) rotate(360deg);
+    }
+  }
+
+  #intro-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(145deg,#FFD95A,#fff2a8);
+    z-index: 100;
+    transition: 0.8s;
+  }
+
+  #intro-screen.hide {
+    opacity: 0;
+    transform: scale(1.05);
+    pointer-events: none;
+  }
+
+  .intro-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(3rem,8vw,5.5rem);
+    color: var(--brown);
+    margin-bottom: 10px;
+  }
+
+  .intro-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #6b4b14;
+    letter-spacing: 2px;
+  }
+
+  .photo-row {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .photo-frame {
+    width: 240px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 25px;
+    border: 6px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    transition: 0.3s;
+  }
+
+  .photo-frame:hover {
+    transform: scale(1.03);
+  }
+
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .unlock-btn {
+    border: none;
+    background: var(--brown);
+    color: #ffe066;
+    padding: 18px 40px;
+    border-radius: 999px;
+    font-size: 1.3rem;
+    font-family: 'Dancing Script', cursive;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+  }
+
+  .unlock-btn:hover {
+    transform: scale(1.05);
+  }
+
+  #letter-screen {
+    display: none;
+    padding: 70px 20px;
+  }
+
+  .letter-container {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .letter-paper {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(6px);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    line-height: 2;
+    font-size: 1.1rem;
+  }
+
+  .letter-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .letter-header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(3rem,7vw,5rem);
+    color: var(--brown);
+  }
+
+  .letter-greeting {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .letter-sign {
+    margin-top: 35px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.7rem;
+  }
+
+  @media(max-width:700px){
+    .photo-frame {
+      width: 180px;
+      height: 230px;
+    }
+
+    .letter-paper {
+      padding: 30px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="sunflower" style="left:10%;animation-delay:0s;">🌻</div>
+<div class="sunflower" style="left:30%;animation-delay:2s;">🌻</div>
+<div class="sunflower" style="left:50%;animation-delay:4s;">🌻</div>
+<div class="sunflower" style="left:70%;animation-delay:1s;">🌻</div>
+<div class="sunflower" style="left:90%;animation-delay:3s;">🌻</div>
+
+<div id="intro-screen">
+  <h1 class="intro-title">Hiii bebuuu! 🌻</h1>
+
+  <p class="intro-subtitle">
+    I love you! 💛
+  </p>
+
+  <div class="photo-row">
+    <div class="photo-frame">
+      <img src="photo_6122845351174673034_y.jpg" alt="us">
+    </div>
+
+    <div class="photo-frame">
+      <img src="photo_6122845351174673193_y (1).jpg" alt="us">
+    </div>
+  </div>
+
+  <button class="unlock-btn" onclick="openLetter()">
+    🌻 click thiss bebuuuloveydipp!
+  </button>
+</div>
+
+<div id="letter-screen">
+  <div class="letter-container">
+
+    <div class="letter-header">
+      <h1>Happy 3rd Month 🌻</h1>
+    </div>
+
+    <div class="letter-paper">
+      <div class="letter-greeting">Hi bebuuu 💛</div>
+
+      <p>
+        Happy 3rd Month of Love!! sobrang saya ko kasi nakaabot na tayo dito. parang dati kinakabahan pa tayo sa isa't isa tapos ngayon sobrang comfortable na natin together HAHAHA 😭
+      </p>
+
+      <br>
+
+      <p>
+        thank you kasi lagi kang nandyan para sakin kahit minsan makulit ako, overthinker, at pasaway. thank you kasi lagi mo pa rin akong pinipili kahit hindi naging madali minsan yung mga pinagdaanan natin lately.
+      </p>
+
+      <br>
+
+      <p>
+        sobrang proud ako sayo palagi bebu. proud ako sa kung sino ka at sa lahat ng ginagawa mo. gusto ko lang malaman mo na ikaw talaga yung isa sa pinakamagandang nangyari sakin.
+      </p>
+
+      <br>
+
+      <p>
+        ang saya isipin na kahit may hard times tayo, inaayos pa rin natin at hindi tayo sumusuko sa isa't isa. gusto ko pa gumawa ng maraming memories with you, maraming gala, lambingan, tawanan, at maraming monthsary pa 😭🌻
+      </p>
+
+      <br>
+
+      <p>
+        mahal na mahal kita alwayss bebuuu. more months and years pa satin ha? 💛
+      </p>
+
+      <div class="letter-sign">
+        mwamwaaaaa!! 💋<br>
+        — forever yours 🌻
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openLetter(){
+  const intro = document.getElementById('intro-screen');
+  const letter = document.getElementById('letter-screen');
+
+  intro.classList.add('hide');
+
+  setTimeout(() => {
+    intro.style.display = 'none';
+    letter.style.display = 'block';
+  }, 800);
+}
+</script>
+
+</body>
+</html>
+
